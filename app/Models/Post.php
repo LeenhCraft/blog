@@ -24,7 +24,7 @@ class Post extends Model
     public function tags()
     {
         // return $this->belongsToMany(Tags::class);
-        return $this->belongsToMany(Tags::class, 'post_tag', 'idpost', 'idtag');
+        return $this->belongsToMany(Tag::class, 'post_tag', 'idpost', 'idtag');
     }
 
     //relacion uno a uno polimorfica

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('idtag');
             $table->string('tag_name');
             $table->string('tag_slug');
+            $table->string('tag_color');
             $table->timestamps();
         });
     }

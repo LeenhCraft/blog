@@ -11,6 +11,6 @@ class Tag extends Model
     //relacion muchos a muchos
     public function posts()
     {
-        return $this->belongsToMany(Post::class);
+        return $this->belongsToMany(Post::class, 'post_tag', 'idtag', 'idpost');
     }
 }

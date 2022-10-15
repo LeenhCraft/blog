@@ -1,3 +1,4 @@
+{{-- componente anonimos, reciviendo un parametro --}}
 @props(['post'])
 <article class="mb-8 bg-white shadow-lg rounded-lg overflow-hidden">
     <img class="w-full h-72 object-cover object-center" src="{{ Storage::url($post->image->img_url) }}" alt="">

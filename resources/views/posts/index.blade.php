@@ -22,6 +22,7 @@
             @endforeach
         </div>
         <div class="mt-4">
+            {{-- paginador --}}
             {{ $posts->links() }}
         </div>
     </div>

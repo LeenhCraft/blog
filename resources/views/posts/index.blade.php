@@ -12,7 +12,9 @@
                             @endforeach
                         </div>
                         <h1 class="text-4xl text-white leading-8 font-bold">
-                            <a href="#">{{ $post->pos_name }}</a>
+                            <a href="{{ route('posts.show', $post->idpost) }}">
+                                {{ $post->pos_name }}
+                            </a>
                         </h1>
                     </div>
                     {{-- <img src="{{ Storage::url($post->image->img_url) }}" alt=""> --}}

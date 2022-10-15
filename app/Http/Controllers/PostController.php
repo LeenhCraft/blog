@@ -10,8 +10,18 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::where('pos_status', '1')->latest('idpost')->paginate(8);
-        // $posts = Post::where('idpost',1)->get();
-        // dd($posts);
         return view('posts.index', compact('posts'));
+    }
+
+    public function show($id)
+    {
+        $post = Post::where('idpost', $id)->firstOrFail();
+        $similares = Post::where('idcategorie', $post->idcategorie)
+            ->where('pos_status', '1')
+            ->where('idpost', '!=', $post->idpost)
+            ->latest('idpost')
+            ->take(4)
+            ->get();
+        return view('posts.show', compact('post', 'similares'));
     }
 }

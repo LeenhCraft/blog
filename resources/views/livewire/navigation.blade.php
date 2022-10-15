@@ -41,7 +41,7 @@
                         {{-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                             aria-current="page">Dashboard</a> --}}
                         @foreach ($categories as $category)
-                            <a href="#"
+                            <a href="{{ route('posts.category', $category->idcategorie) }}"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ $category->cat_name }}</a>
                         @endforeach
 
@@ -108,9 +108,9 @@
             {{-- <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
                 aria-current="page">Dashboard</a> --}}
 
-            @foreach ($categories as $catgeory)
-                <a href="#"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{ $catgeory->cat_name }}</a>
+            @foreach ($categories as $category)
+                <a href="{{ route('posts.category', $category->idcategorie) }}"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{ $category->cat_name }}</a>
             @endforeach
         </div>
     </div>

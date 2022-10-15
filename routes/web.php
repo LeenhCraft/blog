@@ -18,6 +18,8 @@ Route::get('/', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('posts/{id}', [PostController::class, 'show'])->name('posts.show');
 
+Route::get('category/{id}', [PostController::class, 'category'])->name('posts.category');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

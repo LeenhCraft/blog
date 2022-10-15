@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Tag;
 
 class PostController extends Controller
 {
@@ -42,5 +43,17 @@ class PostController extends Controller
         //     ->paginate(8);
         // return [$category,$posts];
         return view('posts.category', compact('posts', 'category'));
+    }
+
+    public function tag($id)
+    {
+        $tag = Tag::where('idtag', $id)->firstOrFail();
+        $posts = Post::whereHas('tags', function ($query) use ($id) {
+            $query->where('tags.idtag', $id);
+        })
+            ->where('pos_status', '1')
+            ->latest('idpost')
+            ->paginate(4);
+        return view('posts.tag', compact('posts', 'tag'));
     }
 }

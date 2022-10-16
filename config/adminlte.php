@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Leenh</b>CRAFT',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'LeenhCraft',
 
     /*
     |--------------------------------------------------------------------------
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -292,37 +292,41 @@ return [
     'menu' => [
         // Navbar items:
         [
+            //menu mobile
             'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
+            'text'         => 'search leenh',
+            'topnav_right' => false,
         ],
         [
+            //menu mobile and lg
             'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+        // [
+        //     //buscador en menu lg
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search lnh',
+        // ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'dashboard',
+            // 'url'         => 'admin',
+            'route'       => 'admin.home',
+            'icon'        => 'fas fa-fw fa-tachometer-alt',
+            // 'label'       => 4,
+            // 'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Administrador'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Categorias',
+            'route'  => 'admin.categories.index',
+            'icon' => 'fab fa-fw fa-buffer',
         ],
         [
             'text' => 'change_password',
